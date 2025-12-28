@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Awaaa 🎂</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  height:100vh;
+  background:linear-gradient(135deg,#ffe4ec,#fff6fa);
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+}
+
+/* INTRO */
+#intro{
+  position:fixed;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#ffd6e8,#fff);
+  z-index:10;
+}
+.envelope{
+  font-size:5rem;
+  animation:bounce 1.5s infinite;
+  cursor:pointer;
+}
+.tap{
+  margin-top:15px;
+  font-size:0.9rem;
+  color:#ff6fae;
+  opacity:0.9;
+}
+
+/* MAIN */
+.container{
+  display:none;
+  height:100%;
+  align-items:center;
+  justify-content:center;
+}
+.card{
+  background:rgba(255,255,255,0.85);
+  padding:40px 30px;
+  border-radius:30px;
+  text-align:center;
+  max-width:400px;
+  box-shadow:0 20px 50px rgba(255,160,200,0.35);
+  animation:pop 1s ease;
+}
+.cake{
+  font-size:3rem;
+  animation:bounce 2s infinite;
+}
+h1{
+  font-family:'Pacifico',cursive;
+  color:#ff6fae;
+  margin:10px 0;
+}
+p{
+  font-size:0.9rem;
+  color:#555;
+  margin-top:8px;
+  line-height:1.6;
+}
+
+/* BALLOONS */
+.balloon{
+  position:absolute;
+  bottom:-100px;
+  font-size:2.5rem;
+  animation:float 8s linear infinite;
+}
+.balloon:nth-child(1){left:10%; animation-duration:7s;}
+.balloon:nth-child(2){left:30%; animation-duration:9s;}
+.balloon:nth-child(3){left:50%; animation-duration:8s;}
+.balloon:nth-child(4){left:70%; animation-duration:10s;}
+.balloon:nth-child(5){left:90%; animation-duration:6s;}
+
+footer{
+  position:fixed;
+  bottom:10px;
+  width:100%;
+  text-align:center;
+  font-size:0.7rem;
+  color:#888;
+}
+
+/* ANIMATIONS */
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+@keyframes pop{
+  from{transform:scale(0.7); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-120vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="bgMusic" src="music.mp3"></audio>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="envelope" onclick="openLetter()">💌</div>
+  <div class="tap">tap the love letter 🤍</div>
+</div>
+
+<!-- BALLOONS -->
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+<div class="balloon">🎈</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="card">
+    <div class="cake">🎂</div>
+    <h1>Happy Birthday awaaaa 🎉</h1>
+
+    <p><b>Salwa Aulia (my besti)</b></p>
+
+    <p>
+      Barakallah fii umrik awaaa 🤍  
+      Cieee uda ultah yang kesekiann~
+    </p>
+
+    <p>
+      Semoga di umur kamu yang sekarang, you become a better person day by day,
+      rezekinya lancar, perjuangannya dimudahkan, and everything you wish for
+      comes true soon ✨
+    </p>
+
+    <p>
+      Semoga kamu bisa membanggakan kedua orang tua kamu
+      and always stay strong & happy 🫶
+    </p>
+
+    <p>
+      Wish you all the best pokonamah waaaa 🤭🎉
+    </p>
+  </div>
+</div>
+
+<footer>
+  © Muhamad Hanafi (Jelgab BM BCh)
+</footer>
+
+<script>
+function openLetter(){
+  document.getElementById("intro").style.display="none";
+  document.querySelector(".container").style.display="flex";
+
+  const music=document.getElementById("bgMusic");
+  music.play();
+}
+</script>
+
+</body>
+  </html>
